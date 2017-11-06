@@ -1,0 +1,4 @@
+---
+applications:
+- name:    upload-mock
+  memory:  512M
