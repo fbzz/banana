@@ -2,6 +2,7 @@
   "name": "bluemix-hello-node",
   "version": "0.0.0",
   "dependencies": {
+    "@cloudant/cloudant": "^2.1.0",
     "body-parser": "^1.18.2",
     "cf-deployment-tracker-client": "*",
     "commander": "^2.6.0",
@@ -9,14 +10,23 @@
     "express": "^4.14.1",
     "formidable": "^1.1.1",
     "http-post": "^0.1.1",
-    "http-proxy": "^1.8.1"
+    "http-proxy": "^1.8.1",
+    "pdf-to-text": "0.0.6"
   },
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":
+      "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && node dist/index.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/IBM-Bluemix/bluemix-hello-node.git"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "rimraf": "^2.6.2"
   }
 }
