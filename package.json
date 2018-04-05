@@ -11,13 +11,13 @@
     "formidable": "^1.1.1",
     "http-post": "^0.1.1",
     "http-proxy": "^1.8.1",
+    "limdu": "^0.9.4",
     "pdf-to-text": "0.0.6"
   },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":
-      "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "start": "npm run build && node dist/index.js"
   },
   "repository": {
