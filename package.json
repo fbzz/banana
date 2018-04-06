@@ -12,7 +12,9 @@
     "http-post": "^0.1.1",
     "http-proxy": "^1.8.1",
     "limdu": "^0.9.4",
-    "pdf-to-text": "0.0.6"
+    "pdf-text": "^0.4.0",
+    "pdf-to-text": "0.0.6",
+    "watson-developer-cloud": "^3.2.1"
   },
   "main": "server.js",
   "scripts": {

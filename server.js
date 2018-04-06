@@ -4,14 +4,20 @@ var express = require('express'),
 var port = 8080;
 var Cloudant = require('@cloudant/cloudant');
 var cloudant = Cloudant(
-  'https://3e12d22f-7031-42d4-b359-9365d5c2a960-bluemix:98b698159592d9403bb4f7367e43b6dfdf193e66eb22a75066e820516ca2c2ad@3e12d22f-7031-42d4-b359-9365d5c2a960-bluemix.cloudant.com'
+'https://09409268-3578-40b1-87f8-0d854a4d17b8-bluemix:896f65c85ee46d141e262b7fb20fbe94fdc8aee046d4d5f75c04ca6db85da6dc@09409268-3578-40b1-87f8-0d854a4d17b8-bluemix.cloudant.com'  
 );
 var watson = require('watson-developer-cloud');
 var formidable = require('formidable');
 var conversation = new watson.ConversationV1({
-  username: '85c90b3d-39b3-4f7e-8cd2-afb7c37d2e8f',
-  password: '2kIaug5F8aAt',
+  username: '5fe0767b-af08-4def-8f36-4605eacf7248',
+  password: 'rr1K2zW1q8kq',
   version_date: '2018-02-16'
+});
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
 var education = cloudant.db.use('education');
@@ -26,35 +32,19 @@ app.use(
   })
 );
 
+
+//var pdfML = require('./pdfML');
+//var pdfAnalyzer = new pdfML();
+
 /*
 pdfText(pathToPdf, function(err, chunks) {
   console.log(chunks);
-  var next = true;
-  var cont = 0;
-  var allQuestions = [];
-  var question = { question: '', answers: '' };
-  while (next === true) {
-    cont++;
-    var questionStart = chunks.indexOf(cont.toString() + '.');
-    var questionFinal = chunks.indexOf('R:');
-    for (var i = questionStart; i < questionFinal; i++) {
-      question.question += chunks[i];
-      console.log(question);
-    }
-    var answerEnd = chunks.indexOf((cont + 1).toString() + '.');
-    if (answerEnd === -1) {
-      answerEnd = chunks.indexOf('Vaticano e Rússia.');
-    }
-    for (var i = questionFinal; i < answerEnd + '.'; i++) {
-      question.answers += chunks[i];
-    }
-    allQuestions.push(question);
-    question = { question: '', answers: '' };
-    chunks = chunks.slice(answerEnd);
-    console.log(allQuestions);
+  for (let i=0; i<chunks.length; i++){
+    console.log(chunks[i]);
+    pdfAnalyzer.analyzeText(chunks[i]);
   }
-});
-*/
+}); */
+
 
 app.use(bodyParser.json());
 
@@ -82,7 +72,6 @@ app.post('/createuser', function(req, res) {
 });
 
 /*
-* 
 * This create the chat bot and the course on the backend database.
 */
 
