@@ -100,19 +100,21 @@ app.post('/newcourse', function(req, res) {
 });
 
 //WE NEED TO UPDATE THIS EVERYTIME WE CHANGE A STEP;
-app.post('/updatecourse', function(req, res) {});
-
-function updateDocument(callback, document) {
+app.post('/updatecourse', function(req, res) {
+  console.log(req.body);
+  req.body._id = req.body.id;
+  req.body._rev = Math.random();
   console.log("Updating document 'mydoc'");
   // make a change to the document, using the copy we kept from reading it back
-  db.insert(doc, function(err, data) {
+  education.insert(req.body, function(err, data) {
     console.log('Error:', err);
     console.log('Data:', data);
     // keep the revision of the update so we can delete it
-    doc._rev = data.rev;
-    callback(err, data);
+    res.sendStatus(200);
+  
   });
-}
+  
+});
 
 function insertIntoDatabase(document) {
   return new Promise(function(resolve, reject) {
