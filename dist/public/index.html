@@ -1,46 +1,14 @@
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NC</title>
+  <meta charset="utf-8">
+  <title>App</title>
+  <base href="/">
 
-    <!-- Bootstrap -->
-    <link href="assets/animate.css" rel="stylesheet">
-    <link href="assets/styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var i = 0;
-            setInterval(function () {
-                if (i === 0) {
-                    $("#wat").append('  <h1 class="animated fadeInLeft" class="texto1">Nunca </h1> &nbsp&nbsp');
-                    i = i + 1;
-                } else if (i === 1) {
-                    $("#wat").append('  <h1 class="animated fadeInRight" class="texto1">Critiquei  </h1> &nbsp&nbsp');
-                    i = i + 1;
-                } else if (i === 2) {
-                    $("#wat").append(' <img class="animated fadeInDown" src="https://media.giphy.com/media/26CaLWA2dcqz6hS4U/giphy.gif">');
-                    $("#wat").append('<audio autoplay preload="auto"> <source src="assets/oh-hi-mark.mp3" type="audio/mpeg"></audio>');
-                }
-            }, 3000);
-
-        });
-
-
-    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-
 <body>
-
-    <div class="container" id="wat">
-
-
-    </div>
-</body>
-
-<footer class="footer foo" style="font-family: 'Bangers', cursive; font-size: 40px">Loading...</footer>
-
+  <app-root></app-root>
+<script src="runtime-es2015.js" type="module"></script><script src="polyfills-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule></script><script src="polyfills-es5.js" nomodule></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule></script><script src="vendor-es2015.js" type="module"></script><script src="main-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule></script><script src="main-es5.js" nomodule></script></body>
 </html>
