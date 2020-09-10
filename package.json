@@ -10,7 +10,7 @@
     "express": "^4.14.1",
     "formidable": "^1.1.1",
     "http-post": "^0.1.1",
-    "http-proxy": "^1.8.1",
+    "http-proxy": "^1.18.1",
     "limdu": "^0.9.4",
     "pdf-text": "^0.4.0",
     "pdf-to-text": "0.0.6",
