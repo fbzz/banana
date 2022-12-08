@@ -7,7 +7,7 @@
     "cf-deployment-tracker-client": "*",
     "commander": "^2.6.0",
     "dropbox-v2-api": "^2.1.8",
-    "express": "^4.14.1",
+    "express": "^4.17.3",
     "formidable": "^1.1.1",
     "http-post": "^0.1.1",
     "http-proxy": "^1.8.1",
